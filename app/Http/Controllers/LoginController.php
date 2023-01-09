@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+use function PHPUnit\Framework\returnValue;
+
+class LoginController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data = user::all();
-        return view('/admin/content/user/index')->with('data',$data);
+       return view('/login/singin');
     }
 
     /**
@@ -24,27 +23,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        if (
-            $request->validate([
-                'nama' => 'required',
-                'password' => 'required',
-                'level' => 'required'
-            ])
-        ) {
-            if ($request->fails()) {
-                return redirect('/admin/user/adduser');
-            } else {
-                $user = new User;
-                $user->nama = $request['nama'];
-                $user->username = $request['username'];
-                $user->password = Hash::make($request['password']);
-                $user->role = $request['role'];
-                $user->save();
-                return redirect('/secret/admin/user');
-            }
-        }
+        //
     }
 
     /**
@@ -55,7 +36,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-     return view('/admin/content/user/add');
+        //
     }
 
     /**

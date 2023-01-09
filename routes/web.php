@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/','App\Http\Controllers\LoginController@index');
 Route::group(['prefix' => 'secret'], function () {
     Route::group(['prefix' => 'admin'], function () {
         Route::get('/', 'App\Http\Controllers\AdminController@index');
@@ -35,3 +36,4 @@ Route::group(['prefix' => 'secret'], function () {
         });
     });
 });
+// gawe root add user

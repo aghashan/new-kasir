@@ -1,6 +1,11 @@
 @extends('/admin/layout/main')
 @section('content')
 <div class="container-fluid">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btn btn-success" type="button">
+            <Tambah><i class="fa fa-plus"></i> Tambah 
+        </a>
+    </div>
     <div class="card shadow mb-4">
         <div class="card-header  bg-primary py-3">
             <h6 class="m-0 font-weight-bold text-white">Daftar Meja</h6>
