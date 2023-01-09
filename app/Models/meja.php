@@ -8,8 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class meja extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'no_meja',
-        'status_meja'
-    ];
+
+    protected $guarded = ['id'];
+    protected $table = 'mejas';
+
+    public function pesanan()
+    {
+        $this->hasMany(Pesanans::class);
+    }
 }

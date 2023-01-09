@@ -22,6 +22,14 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+    protected $guarded = ['id_user'];
+
+   
+
+    public function pesanan()
+    {
+        $this->hasMany(Pesanans::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

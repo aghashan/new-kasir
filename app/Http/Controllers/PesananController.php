@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\masakan;
-use App\Http\Requests\StoremasakanRequest;
-use App\Http\Requests\UpdatemasakanRequest;
+use Illuminate\Http\Request;
 
-class MasakanController extends Controller
+class PesananController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +13,7 @@ class MasakanController extends Controller
      */
     public function index()
     {
-        return view('/admin/content/menu/index');
+        return view('/admin/content/pesanan/index');
     }
 
     /**
@@ -31,10 +29,10 @@ class MasakanController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoremasakanRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoremasakanRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -42,10 +40,10 @@ class MasakanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\masakan  $masakan
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(masakan $masakan)
+    public function show($id)
     {
         //
     }
@@ -53,10 +51,10 @@ class MasakanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\masakan  $masakan
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(masakan $masakan)
+    public function edit($id)
     {
         //
     }
@@ -64,11 +62,11 @@ class MasakanController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatemasakanRequest  $request
-     * @param  \App\Models\masakan  $masakan
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatemasakanRequest $request, masakan $masakan)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -76,10 +74,10 @@ class MasakanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\masakan  $masakan
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(masakan $masakan)
+    public function destroy($id)
     {
         //
     }

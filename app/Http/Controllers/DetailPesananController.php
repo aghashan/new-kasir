@@ -15,7 +15,7 @@ class DetailPesananController extends Controller
      */
     public function index()
     {
-        //
+        return view('/admin/content/detailpesanan/index');
     }
 
     /**

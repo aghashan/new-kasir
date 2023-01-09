@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('masakans', function (Blueprint $table) {
             $table->id('id_masakan');
             $table->string('nama_masakan');
+            $table->string('gambar');
             $table->enum('kategori',['makanan','minuman']);
             $table->enum('status_masakan',['kosong','tersedia']);
             $table->integer('harga');

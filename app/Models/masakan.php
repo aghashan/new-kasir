@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class masakan extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'id_masakan',
-        'nama_masakan',
-        'kategori',
-        'status_masakan',
-        'harga'
-    ];
+    protected $guarded = ['id_masakan'];
+    protected $table = 'masakans';
+
+    public function detailPesanan()
+    {
+        $this->belongsTo(DetailPesanans::class);
+    }
 }

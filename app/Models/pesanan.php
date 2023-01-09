@@ -8,15 +8,26 @@ use Illuminate\Database\Eloquent\Model;
 class pesanan extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'id_pesanan',
-        'tgl_pesanan',
-        'id_user',
-        'no_meja',
-        'total_harga',
-        'bayar',
-        'kembali',
-        'status_pesanan',
-        'status_makanan_pesanan'
+
+    protected $guarded = ['id_pesanan'];
+    protected $table = 'pesanans';
+
+    protected $casts = [
+        'tanggal_pesanan' => 'datetime',
     ];
+
+    public function user()
+    {
+        $this->belongsTo(Users::class);
+    }
+
+    public function meja()
+    {
+        $this->belongsTo(Mejas::class);
+    }
+
+    public function detailPesanan()
+    {
+        $this->hasMany(DetailPesanans::class);
+    }
 }
